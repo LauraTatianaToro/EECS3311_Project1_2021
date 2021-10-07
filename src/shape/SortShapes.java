@@ -1,20 +1,39 @@
 package shape;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.List;
 
 
-public final class SortShapes {
+public class SortShapes {
+	
 
-	public SortShapes(ArrayList<Shape> shapeList) {
-		// TODO Auto-generated constructor stub
+	public static List<Shape> Sort(List<Shape> shapeList) {
+		
+		List<Shape> sortedList = new ArrayList <Shape>();
+		
+		if (shapeList != null) {
+
+			//Bubble Sort
+			// Change coordinates
+			
+			System.out.println("here Bubble sort, save to new array, and change coordinates");
+
+			
+
+			} else {
+			System.out.println("test 2");
+
+		}
+		
+		return sortedList;
+
+		
+
 	}
 
 /**
  * shapelist.sort
- *  for i =0 to shapelist.length
- *   shapelist[i].setx = pint2darray[i].getx
- *   shapelist[i].sety = pint2darray[i].gety
+ * 
  */
 
 }

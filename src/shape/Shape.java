@@ -16,11 +16,7 @@ public abstract class Shape implements Comparable<Shape>{
 	
 	abstract void drawShape(Graphics form);
 	
-    public void move(int x , int y) {
-    	this.upperX = x;
-    	this.upperY = y;
-    }
-
+    abstract void move(int x , int y);
 	
 	
 	public int compareTo(Shape s) {

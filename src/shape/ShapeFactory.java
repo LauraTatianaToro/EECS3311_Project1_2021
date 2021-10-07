@@ -8,10 +8,12 @@ import java.util.List;
 
 public class ShapeFactory {
 	
+	List<Shape> shapeList = new ArrayList <Shape>();
+
+	
 	public List<Shape> createShapes(){
 		
 	    SecureRandom RC = new SecureRandom();
-		List<Shape> shapeList = new ArrayList <Shape>();
 
 	    
 		
@@ -61,4 +63,7 @@ public class ShapeFactory {
 		return shapeList;
 	}
 
+
+	
+	
 }

@@ -26,6 +26,13 @@ public class Rectangle extends Shape  {
         return area;
 
     }
+	
+	@Override
+    public void move(int x , int y) {
+    	this.upperX = x;
+    	this.upperY = y;
+    }
+
 
 	
 	@Override	
