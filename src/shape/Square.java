@@ -14,5 +14,13 @@ public class Square extends Shape {
 		form.fillRect(upperX, upperY, width, height);
 
 	}
+	
+	@Override
+    public double getArea() {
+		double area = width * height;
+
+        return area;
+
+    }
 
 }

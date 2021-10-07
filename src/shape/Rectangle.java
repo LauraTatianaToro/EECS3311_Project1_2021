@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 
-public class Rectangle extends Shape implements Comparable <Rectangle> {
+public class Rectangle extends Shape  {
 	
 	/**
 	 * Class's constructor
@@ -19,23 +19,20 @@ public class Rectangle extends Shape implements Comparable <Rectangle> {
 		super(upperX, upperY, width, height, shapeColor);
 		}
 	
-
-
 	@Override
-	public int compareTo(Rectangle o) {
-		// TODO write the right Java code here to support the comparison
-		return 0;
-	}
-	
-	/**
-	 * Method to draw a rectangle
-	 * @param form
-	 */
+    public double getArea() {
+		double area = width * height;
+
+        return area;
+
+    }
+
 	
 	@Override	
 	public void drawShape(Graphics	form) {
 		form.fillRect(upperX, upperY, width, height);
 	}
+	
 	
     
 

@@ -3,7 +3,7 @@ package shape;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public abstract class Shape {
+public abstract class Shape implements Comparable<Shape>{
 	
 
 	protected int upperX; 
@@ -12,15 +12,21 @@ public abstract class Shape {
 	protected int height;
 	protected Color shapeColor;
 	
-	/**
-	 * Class's constructor
-	 * @param upperX
-	 * @param upperY
-	 * @param width
-	 * @param height
-	 * @param shapeColor
-	 */
+	abstract double getArea();
 	
+	abstract void drawShape(Graphics form);
+	
+    public void move(int x , int y) {
+    	this.upperX = x;
+    	this.upperY = y;
+    }
+
+	
+	
+	public int compareTo(Shape s) {
+		return (int) (this.getArea() - s.getArea());
+	}
+
 	public Shape (int upperX, int upperY, int width, int height, Color shapeColor) {
 		this.upperX = upperX;
 		this.upperY = upperY;
@@ -72,7 +78,6 @@ public abstract class Shape {
 		 this.upperY = upperY;
 	 }
 	 
-	abstract void drawShape(Graphics form);
 
 }
 
