@@ -5,65 +5,53 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
+public abstract class ShapeFactory {
 
-public class ShapeFactory {
-	
-	List<Shape> shapeList = new ArrayList <Shape>();
+	public static List<Shape> createShapes() {
+		List<Shape> shapeList = new ArrayList<Shape>();
 
-	
-	public List<Shape> createShapes(){
-		
-	    SecureRandom RC = new SecureRandom();
+		SecureRandom RC = new SecureRandom();
 
-	    
-		
-		int x= 1;
-        int y= 30;
-        
-	    for(int i = 0; i < 6; i++)
-	    { 
-	        int r = RC.nextInt();
-	        int g2 = RC.nextInt();
-	        int b = RC.nextInt();
-	        int color = (r + g2 + b) / 3;
+		int x = 1;
+		int y = 30;
 
-	        int w = RC.nextInt(80);
-	        int h = RC.nextInt(80);
-	        
-	        
+		for (int i = 0; i < 6; i++) {
+			
+			//generate random colors
+			int r = RC.nextInt();
+			int g2 = RC.nextInt();
+			int b = RC.nextInt();
+			int color = (r + g2 + b) / 3;
 
-	        Color randomColor = new Color(color);
+			//generate random width and height
+			int w = RC.nextInt(70) + 10;
+			int h = RC.nextInt(70) + 10;
 
-	        int choice = RC.nextInt(3);
-	        if(choice == 0)
-	        {
-	        	Rectangle rectangleShape = new Rectangle (x, y, w, h, randomColor);
-	    		shapeList.add(rectangleShape);	  
-		         x= x + 80;
-		         y= y + 80;
-	    		
-	        }
-	        else if (choice == 1)
-	        {
-	        	Circle circleShape = new Circle (x, y, w, w, randomColor);
-	    		shapeList.add(circleShape);	
-		         x= x + 80;
-		         y= y + 80;
-	        }
-	        else if(choice == 2) {
-	        	Square squareShape = new Square (x, y, w, w, randomColor);
-	    		shapeList.add(squareShape);		
-		         x= x + 80;
-		         y= y + 80;
-	        }
-	        
+			Color randomColor = new Color(color);
 
-	    }
-		
+			//randomly selecting a shape
+			int choice = RC.nextInt(3);
+			if (choice == 0) {
+				Rectangle rectangleShape = new Rectangle(x, y, w, h, randomColor);
+				shapeList.add(rectangleShape);
+				x = x + 80;
+				y = y + 80;
+
+			} else if (choice == 1) {
+				Circle circleShape = new Circle(x, y, w, w, randomColor);
+				shapeList.add(circleShape);
+				x = x + 80;
+				y = y + 80;
+			} else if (choice == 2) {
+				Square squareShape = new Square(x, y, w, w, randomColor);
+				shapeList.add(squareShape);
+				x = x + 80;
+				y = y + 80;
+			}
+
+		}
+
 		return shapeList;
 	}
 
-
-	
-	
 }

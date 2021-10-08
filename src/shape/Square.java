@@ -14,19 +14,19 @@ public class Square extends Shape {
 		form.fillRect(upperX, upperY, width, height);
 
 	}
-	
-	@Override
-    public double getArea() {
-		double area = width * height;
 
-        return area;
-
-    }
-	
 	@Override
-    public void move(int x , int y) {
-    	this.upperX = x;
-    	this.upperY = y;
-    }
+	public int getArea() {
+		int area = width * height;
+
+		return area;
+
+	}
+
+	@Override
+	public void move(int x, int y) {
+		this.upperX = x;
+		this.upperY = y;
+	}
 
 }

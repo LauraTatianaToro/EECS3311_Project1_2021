@@ -1,39 +1,47 @@
 package shape;
 
-import java.util.ArrayList;
 import java.util.List;
 
-
-public class SortShapes {
-	
+public abstract class SortShapes {
 
 	public static List<Shape> Sort(List<Shape> shapeList) {
-		
-		List<Shape> sortedList = new ArrayList <Shape>();
-		
+
 		if (shapeList != null) {
 
-			//Bubble Sort
-			// Change coordinates
+			boolean sorted = false;
 			
-			System.out.println("here Bubble sort, save to new array, and change coordinates");
+			//bubblesort
+			while (!sorted) {
+				sorted = true;
 
-			
+				int n = shapeList.size();
+				for (int j = 0; j < n - 1; j++) {
 
-			} else {
-			System.out.println("test 2");
+					if (shapeList.get(j).compareTo(shapeList.get(j + 1)) > 0) {
+
+						// storing temp coords and temp index
+						int tempX = shapeList.get(j).getUpperX();
+						int tempY = shapeList.get(j).getUpperY();
+						Shape temp = shapeList.get(j);
+
+						// swapping coords and indices
+						shapeList.get(j).move(shapeList.get(j + 1).getUpperX(), shapeList.get(j + 1).getUpperY());
+						shapeList.set(j, shapeList.get(j + 1));
+						shapeList.get(j + 1).move(tempX, tempY);
+						shapeList.set(j + 1, temp);
+
+						sorted = false;
+					}
+				}
+			}
+
+		} else {
+			System.out.println("No shapes to sort.");
 
 		}
-		
-		return sortedList;
 
-		
+		return shapeList;
 
 	}
-
-/**
- * shapelist.sort
- * 
- */
 
 }
